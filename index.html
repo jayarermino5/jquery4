@@ -1,50 +1,43 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
     <style>
+      body {
+        background: #FFFFFF;
+        margin: 0;
+      }
 
-        body {
-            background-color: pink;
-        }
-        .red {
-            color : red;
-        }
+      #oneGoogleBar {
+        height: 56px;
+      }
 
-        .green {
-            color: green;
-        }
+      #backgroundImage {
+        border: none;
+        height: 100%;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+      }
+
+      [show-background-image] #backgroundImage {
+        visibility: visible;
+      }
     </style>
-</head>
-<body>
-    <h1 class="header">jQuery Tutorial</h1>
-
-    <h1>From Repository</h1>
-    
-    <button class="btn-red">Red me!</button>
-    <button class="btn-green">Green me!</button>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
-
-    <script>
-
-       $(document).ready(function() {
-            
-            $('.btn-red').on('click', function() {
-                $('.header').removeClass("green");
-                $('.header').addClass("red");
-            }) f
-            
-            $('.btn-green').on('click', function() {
-                $('.header').removeClass("red");
-                $('.header').addClass("green");
-            })
-
-       }) // document
-    </script>
-</body>
+  </head>
+  <body>
+    <div id="oneGoogleBar"></div>
+    <iframe id="backgroundImage"
+        src="chrome-untrusted://new-tab-page/custom_background_image?url=">
+    </iframe>
+    <ntp-app></ntp-app>
+    <script type="module" src="new_tab_page.js"></script>
+    <link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
+    <link rel="stylesheet" href="shared_vars.css">
+    <div id="oneGoogleBarEndOfBody"></div>
+  </body>
 </html>
