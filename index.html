@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: silver;
+        }
+        .red {
+            color : red;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">jQuery Tutorial</h1>
+
+    <h1>From Repository</h1>
+    
+    <button class="btn-red">Red me!</button>
+    <button class="btn-green">Green me!</button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+
+    <script>
+
+       $(document).ready(function() {
+            
+            $('.btn-red').on('click', function() {
+                $('.header').removeClass("green");
+                $('.header').addClass("red");
+            }) f
+            
+            $('.btn-green').on('click', function() {
+                $('.header').removeClass("red");
+                $('.header').addClass("green");
+            })
+
+       }) // document
+    </script>
+</body>
+</html>
